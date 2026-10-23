@@ -36,7 +36,7 @@ This checklist applies to the **new** `ha-ipmi-core` repository. The prior devel
 - [x] Python compilation, JSON validation and offline unit tests pass.
 - [x] Home Assistant Hassfest validation passes.
 - [x] Brand assets regenerated using CI-pinned dependencies.
-- [ ] Read-only CI regenerates assets without diffs after the workflow is returned to validation-only mode.
+- [x] Read-only CI regenerates assets without diffs after the workflow is returned to validation-only mode.
 - [ ] Official HACS validation completes successfully. Last HACS Action failed **only because the repository has no GitHub topics**; add relevant topics in GitHub's About panel and rerun.
 - [ ] Review GitHub Actions logs and generated installation artifacts before promoting them as release assets.
 
