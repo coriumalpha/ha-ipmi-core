@@ -43,7 +43,7 @@ Power status and telemetry are **separate polling paths**. Power status defaults
 
 ### HACS — recommended
 
-Once this repository is public, you can install and update IPMI Core through HACS, without copying integration files through SSH or manually unpacking a ZIP:
+Install and update IPMI Core through HACS directly from this public repository, without copying integration files through SSH or manually unpacking a ZIP:
 
 1. Open **HACS → ⋮ → Custom repositories**.
 2. Enter `https://github.com/coriumalpha/ha-ipmi-core`, select **Integration**, and click **Add**.
