@@ -1,4 +1,4 @@
-"""Render Home Assistant brand PNGs from the versioned IPMI Core SVG."""
+"""Render Home Assistant brand PNGs from the supplied, SVG-wrapped artwork."""
 
 from pathlib import Path
 import io

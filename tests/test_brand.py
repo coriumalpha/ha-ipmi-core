@@ -19,11 +19,13 @@ class TestIntegrationBrand(unittest.TestCase):
                 dimensions = struct.unpack(">II", data[16:24])
                 self.assertEqual(dimensions, (expected_size, expected_size))
 
-    def test_editable_vector_source_exists(self):
+    def test_branded_svg_source_is_present(self):
         document = ET.parse(SOURCE)
-        self.assertEqual(
-            document.getroot().attrib.get("viewBox"), "0 0 512 512"
-        )
+        self.assertEqual(document.getroot().attrib.get("viewBox"), "0 0 512 512")
+        # The publisher-supplied artwork is embedded as a data URI in the SVG
+        # wrapper, so rendering is self-contained and needs no network access.
+        source = SOURCE.read_text(encoding="utf-8")
+        self.assertIn("data:image/jpeg;base64,", source)
 
 if __name__ == "__main__":
     unittest.main()

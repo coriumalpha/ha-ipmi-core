@@ -1,6 +1,6 @@
 # IPMI Core 0.1.7 — publication checklist
 
-**Status:** Private repository. Custom HACS distribution is being prepared; public visibility has not been authorized or changed.
+**Status:** Custom HACS distribution in preparation. **Visibility must be reviewed by the maintainer** before release. On 2026-10-23 GitHub reported this new repository as public; if publication has not been approved, switch it back to private in GitHub settings.
 
 This checklist applies to the **new** `ha-ipmi-core` repository. The prior development repository is retained independently as a private archive. Historical cleanup tasks for the old repository do not apply to this new Git history.
 
@@ -8,11 +8,13 @@ This checklist applies to the **new** `ha-ipmi-core` repository. The prior devel
 
 - [x] New Git repository created independently of the private development archive.
 - [x] The initial commit is a root commit with no inherited parents.
-- [x] Only `main` exists; no imported issues or pull requests.
+- [x] No imported issues or pull requests; a temporary `release/hacs-custom-0.1.7` preparation branch now exists alongside `main`.
+- [ ] Merge or fast-forward the vetted release branch to `main` after final review.
 - [x] Author/committer email is accepted by the maintainer and does not require anonymization.
 - [x] GitHub account name, codeowner and project links are intentional public project identifiers.
 - [x] Reviewed text files contain no known personal hostnames, internal infrastructure addresses or Telegram IDs.
-- [ ] Final inspection of binary assets and any future release artifacts for embedded metadata or identifying content.
+- [x] Replacement brand PNGs were generated with pinned dependencies from the supplied project logo (no embedded private BMC details).
+- [ ] Final inspection of any future release artifacts for embedded metadata or identifying content.
 - [ ] Confirm no personal configuration, credentials, backups or debug outputs have been added before publication.
 
 **Important:** Subsequent documentation maintenance commits are acceptable; the objective is **no inherited private development history**, not permanently restricting the repository to one commit.
@@ -33,13 +35,14 @@ This checklist applies to the **new** `ha-ipmi-core` repository. The prior devel
 
 - [x] Python compilation, JSON validation and offline unit tests pass.
 - [x] Home Assistant Hassfest validation passes.
-- [x] Brand assets regenerate reproducibly.
-- [ ] Official HACS validation completes successfully. The workflow currently skips this job while the repository is private; rerun after making it public.
+- [x] Brand assets regenerated using CI-pinned dependencies.
+- [ ] Read-only CI regenerates assets without diffs after the workflow is returned to validation-only mode.
+- [ ] Official HACS validation completes successfully. Last HACS Action failed **only because the repository has no GitHub topics**; add relevant topics in GitHub's About panel and rerun.
 - [ ] Review GitHub Actions logs and generated installation artifacts before promoting them as release assets.
 
 ## Public release
 
-- [ ] Change repository visibility to **Public**, after the remaining checks are accepted (required for custom HACS access).
+- [ ] Confirm the current repository visibility and approve **Public** only after final review (required for custom HACS access).
 - [ ] Test installation via **HACS → Custom repositories → Integration** using this repository URL.
 - [ ] Rerun CI and confirm the official HACS validator passes.
 - [ ] Create a tagged `v0.1.7` GitHub Release, with tested installation instructions and a clear hardware-compatibility disclaimer.
