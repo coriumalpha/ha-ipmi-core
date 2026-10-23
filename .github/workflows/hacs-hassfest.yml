@@ -1,0 +1,28 @@
+name: HACS and Home Assistant validation
+
+on:
+  push:
+    branches: [main, chore/publication-hygiene]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hacs:
+    # The official HACS validator refuses private repositories.
+    # Run automatically once visibility changes to public.
+    if: github.event.repository.private == false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hacs/action@main
+        with:
+          category: integration
+
+  hassfest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: home-assistant/actions/hassfest@master

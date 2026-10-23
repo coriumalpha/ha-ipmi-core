@@ -1,0 +1,29 @@
+name: Basic checks
+on:
+  push:
+  pull_request:
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Compile Python files
+        run: python -m compileall -q custom_components/ipmi_core tests
+      - name: Validate JSON files
+        run: python -c "import json,pathlib; [json.loads(p.read_text()) for p in pathlib.Path('custom_components/ipmi_core').rglob('*.json')]"
+      - name: Offline unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Build manual installation package
+        run: |
+          cd custom_components
+          zip -q -r ../ipmi-core-install.zip ipmi_core -x '*/__pycache__/*' '*.pyc'
+      - name: Upload manual installation package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ipmi-core-install
+          path: ipmi-core-install.zip
+          retention-days: 7
+          if-no-files-found: error

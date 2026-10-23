@@ -1,0 +1,13 @@
+{
+  "domain": "ipmi_core",
+  "name": "IPMI Core",
+  "codeowners": ["@coriumalpha"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/coriumalpha/ha-ipmi-core",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/coriumalpha/ha-ipmi-core/issues",
+  "requirements": ["pyghmi==1.6.19"],
+  "version": "0.1.7"
+}

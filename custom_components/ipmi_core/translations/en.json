@@ -1,0 +1,45 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to an IPMI BMC",
+        "description": "Requires an IPMI Operator account. Read chassis power, request guarded power-on or OS-managed ACPI graceful shutdown. Hard power-off is not available.",
+        "data": {
+          "name": "Name",
+          "host": "Host/IP address",
+          "port": "UDP port",
+          "username": "Username",
+          "password": "Password",
+          "poll_seconds": "Polling interval (seconds)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to read the power state. Check credentials, network access and IPMI Operator permission."
+    },
+    "abort": {
+      "already_configured": "This BMC is already configured."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "power": {
+        "name": "Power"
+      },
+      "bmc_communication": {
+        "name": "BMC communication"
+      },
+      "hardware_warnings": {
+        "name": "Hardware warnings"
+      }
+    },
+    "button": {
+      "power_on": {
+        "name": "Power on"
+      },
+      "graceful_shutdown": {
+        "name": "Request graceful shutdown (ACPI)"
+      }
+    }
+  }
+}

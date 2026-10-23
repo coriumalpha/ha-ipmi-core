@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">IPMI Core</title>
+  <desc id="desc">Two protected rack server modules with turquoise indicators and a power-control symbol.</desc>
+  <defs>
+    <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#112B40"/>
+      <stop offset="1" stop-color="#091724"/>
+    </linearGradient>
+    <linearGradient id="chassis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#263F56"/>
+      <stop offset="1" stop-color="#172C40"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7CF8EB"/>
+      <stop offset="1" stop-color="#15BED2"/>
+    </linearGradient>
+    <radialGradient id="backlight">
+      <stop offset="0" stop-color="#0CCBC1" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#0CCBC1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="108" fill="#0D2336"/>
+  <rect x="37" y="37" width="438" height="438" rx="79" fill="none" stroke="#A4D8ED" stroke-opacity=".12" stroke-width="3"/>
+  <g>
+    <rect x="93" y="138" width="326" height="106" rx="24" fill="#08121F" opacity=".85" transform="translate(0 7)"/>
+    <rect x="93" y="134" width="326" height="106" rx="24" fill="#213B51" stroke="#55778D" stroke-width="6"/>
+    <path d="M121 159 H389" stroke="#9AC4D4" stroke-opacity=".16" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="143" cy="189" r="11" fill="#55EDDC"/>
+    <circle cx="143" cy="189" r="21" fill="none" stroke="#55EDDC" stroke-opacity=".20" stroke-width="4"/>
+    <g stroke="#AFCAD8" stroke-width="10" stroke-linecap="round" opacity=".72">
+      <path d="M191 189h16M230 189h16M269 189h16"/>
+    </g>
+    <g fill="none" stroke="#52E3DB" stroke-width="11" stroke-linecap="round">
+      <path d="M345 174 A24 24 0 1 0 369 174"/>
+      <path d="M357 160v28"/>
+    </g>
+  </g>
+  <g>
+    <rect x="93" y="276" width="326" height="106" rx="24" fill="#08121F" opacity=".88" transform="translate(0 7)"/>
+    <rect x="93" y="272" width="326" height="106" rx="24" fill="#213B51" stroke="#55778D" stroke-width="6"/>
+    <path d="M121 297H389" stroke="#9AC4D4" stroke-opacity=".16" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="143" cy="327" r="11" fill="#55EDDC"/>
+    <circle cx="143" cy="327" r="21" fill="none" stroke="#55EDDC" stroke-opacity=".20" stroke-width="4"/>
+    <g stroke="#AFCAD8" stroke-width="10" stroke-linecap="round" opacity=".72">
+      <path d="M191 327h16M230 327h16M269 327h16"/>
+    </g>
+    <rect x="333" y="315" width="44" height="24" rx="12" fill="#17394D" stroke="#369C9C" stroke-width="3"/>
+    <circle cx="349" cy="327" r="6" fill="#61F8E6"/>
+    <circle cx="366" cy="327" r="6" fill="#488CA8"/>
+  </g>
+  <path d="M256 242V271" stroke="#66D5DC" stroke-width="6" stroke-linecap="round" opacity=".85"/>
+  <circle cx="256" cy="256" r="7" fill="#7CF8EB"/>
+</svg>

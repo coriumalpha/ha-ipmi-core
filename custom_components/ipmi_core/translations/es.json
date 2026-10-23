@@ -1,0 +1,45 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Conectar con un controlador IPMI",
+        "description": "Se necesita una cuenta IPMI Operator. Permite consultar la alimentación, encender y solicitar un apagado ordenado mediante ACPI. El apagado no corta la alimentación de forma forzada.",
+        "data": {
+          "name": "Nombre",
+          "host": "Host/dirección IP",
+          "port": "Puerto UDP",
+          "username": "Usuario",
+          "password": "Contraseña",
+          "poll_seconds": "Intervalo de consulta (segundos)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No se pudo leer el estado de alimentación. Comprueba la red, las credenciales y los privilegios Operator."
+    },
+    "abort": {
+      "already_configured": "Este controlador BMC ya está configurado."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "power": {
+        "name": "Alimentación"
+      },
+      "bmc_communication": {
+        "name": "Comunicación con el BMC"
+      },
+      "hardware_warnings": {
+        "name": "Advertencias del hardware"
+      }
+    },
+    "button": {
+      "power_on": {
+        "name": "Encender"
+      },
+      "graceful_shutdown": {
+        "name": "Solicitar apagado ordenado (ACPI)"
+      }
+    }
+  }
+}
