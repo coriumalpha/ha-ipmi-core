@@ -1,6 +1,6 @@
 # IPMI Core 0.1.7 — publication checklist
 
-**Status:** Private repository. Public release has not been authorized or performed.
+**Status:** Private repository. Custom HACS distribution is being prepared; public visibility has not been authorized or changed.
 
 This checklist applies to the **new** `ha-ipmi-core` repository. The prior development repository is retained independently as a private archive. Historical cleanup tasks for the old repository do not apply to this new Git history.
 
@@ -21,6 +21,8 @@ This checklist applies to the **new** `ha-ipmi-core` repository. The prior devel
 
 - [x] IPMI Core source, translations, brand assets, tests and license are in `main`.
 - [x] README, changelog and telemetry/sensor guides reflect source version 0.1.7.
+- [x] HACS metadata and installation instructions prepared for custom-repository distribution.
+- [x] Publisher **Arcotangana**, maintainer **@coriumalpha** and project version **0.1.7** documented.
 - [x] Generic automation guidance, contributor instructions and security policy are present.
 - [x] `hacs.json` and the Home Assistant integration manifest are present.
 - [ ] Complete third-party license and pinned-dependency review.
@@ -37,7 +39,8 @@ This checklist applies to the **new** `ha-ipmi-core` repository. The prior devel
 
 ## Public release
 
-- [ ] Change repository visibility to **Public**, after the remaining checks are accepted.
+- [ ] Change repository visibility to **Public**, after the remaining checks are accepted (required for custom HACS access).
+- [ ] Test installation via **HACS → Custom repositories → Integration** using this repository URL.
 - [ ] Rerun CI and confirm the official HACS validator passes.
 - [ ] Create a tagged `v0.1.7` GitHub Release, with tested installation instructions and a clear hardware-compatibility disclaimer.
 - [ ] Verify README, release links, installation package and assets from an unauthenticated session.

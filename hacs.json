@@ -1,4 +1,5 @@
 {
   "name": "IPMI Core",
-  "render_readme": true
+  "render_readme": false,
+  "hide_default_branch": false
 }

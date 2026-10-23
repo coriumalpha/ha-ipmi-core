@@ -2,7 +2,7 @@ name: HACS and Home Assistant validation
 
 on:
   push:
-    branches: [main, chore/publication-hygiene]
+    branches: [main, "release/**"]
   pull_request:
   workflow_dispatch:
 
