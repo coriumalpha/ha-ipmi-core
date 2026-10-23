@@ -1,37 +1,53 @@
-# IPMI Core 0.1.7 — pre-publication checklist
+# IPMI Core 0.1.7 — publication checklist
 
-**Status: private.** Source version 0.1.7 is integrated in the default branch.
-Repository visibility has not been changed.
+**Status:** Private repository. Public release has not been authorized or performed.
 
-## Current source
+This checklist applies to the **new** `ha-ipmi-core` repository. The prior development repository is retained independently as a private archive. Historical cleanup tasks for the old repository do not apply to this new Git history.
 
-- [x] Source, translations, README, changelog and brand assets in `main`
-- [x] Existing tests and basic CI checks pass
-- [x] No hardcoded BMC address or server name in integration logic
-- [x] HACS configuration (`hacs.json`) and Home Assistant manifest present
-- [x] Hassfest validation passes
-- [ ] Official HACS validator passes (HACS rejects *private* repositories)
-- [ ] Clean-install acceptance and dependency/license review completed
+## Repository and privacy
 
-## Historical GitHub data — publication blockers
+- [x] New Git repository created independently of the private development archive.
+- [x] The initial commit is a root commit with no inherited parents.
+- [x] Only `main` exists; no imported issues or pull requests.
+- [x] Author/committer email is accepted by the maintainer and does not require anonymization.
+- [x] GitHub account name, codeowner and project links are intentional public project identifiers.
+- [x] Reviewed text files contain no known personal hostnames, internal infrastructure addresses or Telegram IDs.
+- [ ] Final inspection of binary assets and any future release artifacts for embedded metadata or identifying content.
+- [ ] Confirm no personal configuration, credentials, backups or debug outputs have been added before publication.
 
-- [x] Current issue and PR bodies and visible comments anonymized for the known server name and management IP
-- [ ] Inspect and remove **previous revisions** of edited comments and descriptions
-- [ ] Clean old git branch refs, tags, author metadata and reachable history
-- [ ] Check PR diffs and hidden PR refs, Actions logs and artifact history
-- [ ] Ensure GitHub has purged any genuinely sensitive old objects (GitHub
-  Support may be required; rewriting just `main` is not enough)
-- [ ] Avoid reintroducing old commits from earlier clones
+**Important:** Subsequent documentation maintenance commits are acceptable; the objective is **no inherited private development history**, not permanently restricting the repository to one commit.
 
-**Do not switch this existing repository to public while historical-data checks remain outstanding.**
+## Source and documentation
 
-## HACS distribution
+- [x] IPMI Core source, translations, brand assets, tests and license are in `main`.
+- [x] README, changelog and telemetry/sensor guides reflect source version 0.1.7.
+- [x] Generic automation guidance, contributor instructions and security policy are present.
+- [x] `hacs.json` and the Home Assistant integration manifest are present.
+- [ ] Complete third-party license and pinned-dependency review.
+- [ ] Perform a clean installation from this repository in a supported Home Assistant environment and verify the entities and controls without using private configurations.
+- [ ] Confirm any vendor-specific claims remain appropriately qualified.
 
-To request admission to the default catalog, the repository must be public,
-the official HACS Action and Hassfest checks must pass, and a GitHub Release
-must be published. None of those publication steps has been authorized yet.
+## CI and validation
 
-Documentation:
-- https://hacs.dev/docs/publish/action/
-- https://github.com/home-assistant/actions
-- https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
+- [x] Python compilation, JSON validation and offline unit tests pass.
+- [x] Home Assistant Hassfest validation passes.
+- [x] Brand assets regenerate reproducibly.
+- [ ] Official HACS validation completes successfully. The workflow currently skips this job while the repository is private; rerun after making it public.
+- [ ] Review GitHub Actions logs and generated installation artifacts before promoting them as release assets.
+
+## Public release
+
+- [ ] Change repository visibility to **Public**, after the remaining checks are accepted.
+- [ ] Rerun CI and confirm the official HACS validator passes.
+- [ ] Create a tagged `v0.1.7` GitHub Release, with tested installation instructions and a clear hardware-compatibility disclaimer.
+- [ ] Verify README, release links, installation package and assets from an unauthenticated session.
+- [ ] Optionally submit to the HACS default catalog after satisfying its publication requirements.
+
+## Known limitations
+
+- SDR telemetry can temporarily retain earlier values after a chassis power-state transition because telemetry polling is independent of chassis-state polling.
+- General compatibility with all vendors and BMC firmware versions is not established.
+- IPMI Core does not validate hypervisor workloads or job completion before an ACPI shutdown.
+- Offline tests, Hassfest and a successful hardware test do not constitute an independent security audit.
+
+**Publication decision:** The new Git history has no inherited private commits, and the reviewed source is suitable for continued release preparation. The remaining unchecked items are release checks—not unresolved historical-data cleanup in this new repository.
